@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <input type="number" id="inputDisplay" value="0">
+    <table>
+        <tr>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('7')">7</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('8')">8</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('9')">9</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('clear')">c</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('4')">4</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('5')">5</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaDisplay('6')">6</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizaOperacao('+')">+</button>
+            </td>
+            <tr>
+                <td>
+                  <button class="btn" onclick="atualizaDisplay('1')">1</button>  
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaDisplay('2')">2</button>
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaDisplay('3')">3</button>
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaOperacao('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn" onclick="resolver()">=</button>
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaDisplay('0')">0</button>
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaOperacao('*')">x</button>
+                </td>
+                <td>
+                    <button class="btn" onclick="atualizaOperacao('/')">/</button>
+                </td>
+            </tr>
+        </tr>
+    </table>
+
+    <script>
+        let opecarao = ""
+
+        function atualizaOperacao(op) {
+            opecarao = op;
+        }
+
+        function resolver() {
+            alert(operacao);
+        }
+
+        function atualizaDisplay(numero){
+            const input = document.getElementById('inputDisplay')
+           
+           if (input.value === "0")
+           input.value = numero;
+            else
+            input.value = input.value + numero;
+        }
+    </script>
+</body>
+</html>
